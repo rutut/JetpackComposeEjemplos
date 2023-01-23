@@ -54,11 +54,7 @@
             
             <li class="nav-item" data-level="1"><a href="#bienvenido" class="nav-link">Bienvenido</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+            <li class="nav-item" data-level="2"><a href="#card" class="nav-link">Card</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -70,19 +66,66 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="bienvenido">Bienvenido</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h2 id="card">Card</h2>
+<p><img alt="CardExample" src="img/01Card.png" /></p>
+<p><strong>Ejemplo Basico</strong></p>
+<pre><code>import androidx.compose.ui.graphics.Color
+
+@Preview
+@Composable
+fun CardDemo(){
+    Card(
+
+    ){
+        Column(){
+            Text(
+                buildAnnotatedString{
+                    append(&quot;welcome to &quot;)
+                    withStyle(style= SpanStyle(fontWeight = FontWeight.W900,color= Color(0xFF4552B8))){
+                        append(&quot;Jetpack Compose Playground&quot;)
+                    }
+                }
+            )
+            Text(text=&quot;Mas Texto&quot;)
+        }
+    }
+}
+</code></pre>
+<p><strong>Ejemplo completo</strong>
+Pongo este ejemplo completo porque es clickable</p>
+<pre><code>@Composable
+fun CardDemo() {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(15.dp)
+            .clickable{ },  
+        elevation = 10.dp
+    ) {
+        Column(
+            modifier = Modifier.padding(15.dp)
+        ) {
+            Text(
+                buildAnnotatedString {
+                    append(&quot;welcome to &quot;)
+                    withStyle(style = SpanStyle(fontWeight = FontWeight.W900, color = Color(0xFF4552B8))
+                    ) {
+                        append(&quot;Jetpack Compose Playground&quot;)
+                    }
+                }
+            )
+            Text(
+                buildAnnotatedString {
+                    append(&quot;Now you are in the &quot;)
+                    withStyle(style = SpanStyle(fontWeight = FontWeight.W900)) {
+                        append(&quot;Card&quot;)
+                    }
+                    append(&quot; section&quot;)
+                }
+            )
+        }
+    }
+}
 </code></pre></div>
             </div>
         </div>
@@ -164,5 +207,5 @@ docs/
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2023-01-22 22:52:47.475184+00:00
+Build Date UTC : 2023-01-23 04:42:18.311966+00:00
 -->
